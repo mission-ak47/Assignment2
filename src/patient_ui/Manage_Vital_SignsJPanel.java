@@ -451,13 +451,13 @@ public class Manage_Vital_SignsJPanel extends javax.swing.JPanel {
 
         tblManage_Patient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Patient Age", "Patient ID", "Comunity"
+                "Patient Name", "Patient Age", "Patient ID", "Community", "Hospital"
             }
         ));
         jScrollPane2.setViewportView(tblManage_Patient);
@@ -489,7 +489,7 @@ public class Manage_Vital_SignsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRefreshPatients.setText("Refresh Patients");
+        btnRefreshPatients.setText("Refresh");
         btnRefreshPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshPatientsActionPerformed(evt);

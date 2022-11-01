@@ -121,7 +121,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPharmacy">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pharmacy"/>
+            <Property name="text" type="java.lang.String" value="Hospital"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPatientID">

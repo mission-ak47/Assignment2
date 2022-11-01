@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
-
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import model.Hospital_Directory;
 import model.Person_Directory;
 import patient_ui.PatientJPanel;
 import person_ui.Manage_PersonJPanel;
@@ -21,7 +21,8 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     private Person_Directory person_Directory;
-    
+    private Hospital_Directory hospital_Directory; 
+      
     public MainJFrame() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -143,32 +144,31 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonActionPerformed
         // TODO add your handling code here:
-        Manage_PersonJPanel mpJPanel= new Manage_PersonJPanel(userAccessArea, person_Directory);
-        userAccessArea.add("mpJPanel", mpJPanel);
-        CardLayout layout=(CardLayout) userAccessArea.getLayout();
-        layout.next(userAccessArea);            
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you Authorized User?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            Manage_PersonJPanel mpJPanel= new Manage_PersonJPanel(userAccessArea, person_Directory);
+                userAccessArea.add("mpJPanel", mpJPanel);
+                CardLayout layout=(CardLayout) userAccessArea.getLayout();
+                layout.next(userAccessArea);}else {remove(dialogButton);}                        
     }//GEN-LAST:event_btnPersonActionPerformed
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
-        PatientJPanel pmwaJPanel=
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you Authorized User?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            PatientJPanel pmwaJPanel=
                 new PatientJPanel(userAccessArea, person_Directory);
         userAccessArea.add("pmwaJPanel", pmwaJPanel);
         CardLayout layout=(CardLayout) userAccessArea.getLayout();
-        layout.next(userAccessArea);
+        layout.next(userAccessArea);}else {remove(dialogButton);}
+        
     }//GEN-LAST:event_btnPatientActionPerformed
 
     private void exitMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMainActionPerformed
         // TODO add your handling code here:
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-            JOptionPane.showConfirmDialog (null, "Are you sure?","WARNING", dialogButton);
-            if(dialogButton == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            if(dialogButton == JOptionPane.NO_OPTION) {
-                //remove(dialogButton);
-                this.dispose();
-               }
-              }
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you sure?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            System.exit(0);}else {remove(dialogButton);}
     }//GEN-LAST:event_exitMainActionPerformed
 
     

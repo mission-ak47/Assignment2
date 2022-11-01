@@ -16,6 +16,7 @@ public class Person {
     private City city;
     private House house;
     private Community community;
+    private Hospital hospital;
 
     public Community getCommunity() {
         return community;
@@ -63,6 +64,14 @@ public class Person {
     
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+    
+    public Hospital getHospital() {
+        return hospital;
+    }
+    
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
     
     @Override

@@ -127,7 +127,7 @@ public class Updated_Patients extends javax.swing.JPanel {
 
         lblDoctor.setText("Doctor");
 
-        lblPharmacy.setText("Pharmacy");
+        lblPharmacy.setText("Hospital");
 
         editJButton.setText("Update");
         editJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -244,7 +244,9 @@ public class Updated_Patients extends javax.swing.JPanel {
 
     private void editJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editJButtonActionPerformed
         // TODO add your handling code here:
-        modifyTextFields(true);
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you sure?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            modifyTextFields(true);}else {remove(dialogButton);}
     }//GEN-LAST:event_editJButtonActionPerformed
 
     private void saveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveJButtonActionPerformed

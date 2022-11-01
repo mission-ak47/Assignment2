@@ -319,7 +319,10 @@ public class Manage_PersonJPanel extends javax.swing.JPanel {
 
     private void deletePersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePersonJButtonActionPerformed
         // TODO add your handling code here:
-        int selectedRow= viewPersonsJTable.getSelectedRow();
+        
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you sure?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            int selectedRow= viewPersonsJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row from table.",
                 "Error", JOptionPane.INFORMATION_MESSAGE);
@@ -333,7 +336,9 @@ public class Manage_PersonJPanel extends javax.swing.JPanel {
         {
             person_Directory.deletePerson(person);
             populatePersonsTable(person_Directory.getPerson_History());
-        }
+        }}else {remove(dialogButton);}
+         
+        
     }//GEN-LAST:event_deletePersonJButtonActionPerformed
 
     private void createPersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPersonJButtonActionPerformed

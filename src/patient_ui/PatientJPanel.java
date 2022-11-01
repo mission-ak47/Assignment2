@@ -5,6 +5,7 @@
 package patient_ui;
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Person_Directory;
 
@@ -133,19 +134,27 @@ public class PatientJPanel extends javax.swing.JPanel {
 
     private void btnManage_PatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManage_PatientsActionPerformed
         // TODO add your handling code here:
-        Manage_PatientsJPanel mpJPanel= new Manage_PatientsJPanel(userAccessArea, person_Directory);
+        
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you Authorized User?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            Manage_PatientsJPanel mpJPanel= new Manage_PatientsJPanel(userAccessArea, person_Directory);
         userAccessArea.add("mpJPanel", mpJPanel);
         CardLayout layout=(CardLayout) userAccessArea.getLayout();
-        layout.next(userAccessArea);
+        layout.next(userAccessArea);}else {remove(dialogButton);}
+
     }//GEN-LAST:event_btnManage_PatientsActionPerformed
 
     private void btnManage_Vital_SignsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManage_Vital_SignsActionPerformed
         // TODO add your handling code here:
-        Manage_Vital_SignsJPanel mvsJPanel= 
+        
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Are you Authorized User?","WARNING",JOptionPane.YES_NO_OPTION);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+            Manage_Vital_SignsJPanel mvsJPanel= 
                 new Manage_Vital_SignsJPanel(userAccessArea, person_Directory);
         userAccessArea.add("mvsJPanel", mvsJPanel);
         CardLayout layout=(CardLayout) userAccessArea.getLayout();
-        layout.next(userAccessArea);
+        layout.next(userAccessArea);}else {remove(dialogButton);}
+
     }//GEN-LAST:event_btnManage_Vital_SignsActionPerformed
 
 

@@ -109,10 +109,12 @@
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnUpdate" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSave" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSave" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>

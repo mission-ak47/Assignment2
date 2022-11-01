@@ -70,7 +70,7 @@ public class Create_PatientJPanel extends javax.swing.JPanel {
 
         lblDoctor.setText("Doctor");
 
-        lblPharmacy.setText("Pharmacy");
+        lblPharmacy.setText("Hospital");
 
         txtPatientID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
